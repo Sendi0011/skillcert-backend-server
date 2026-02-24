@@ -34,6 +34,9 @@ export class User {
   })
   role: UserRole;
 
+  @Column({ type: 'varchar', length: 42, unique: true, nullable: true, default: null })
+  walletAddress: string | null;
+
   @OneToMany(() => Course, (course) => course.professor)
   courses: Course[];
 
